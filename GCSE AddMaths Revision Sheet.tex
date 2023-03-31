@@ -5,6 +5,8 @@
 
 \usepackage[english]{babel}
 
+\theoremstyle{remark}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -26,8 +28,6 @@
 
 \newcommand{\Author}{Yicheng Shao}
 
-\theoremstyle{remark}
-
 \author{\Author}
 \title{\Title}
 \date{Version 1. \Date}
@@ -41,8 +41,184 @@
 	\tableofcontents
 
     \section*{What is this and why this?}
+
+        This document assumes prior knowledge in CIE IGCSE Mathematics.
     
-    
+    \section{Functions}
+
+        \begin{definition}[function, domain, image]
+            A \textbf{fucntion} $f: A \rightarrow B$ is defined as a mapping which maps each element in $A$ to exactly one element in $B$. Basically, a function is an operation on a thing which definitely produces another thing.
+
+            We call $A$ the \textbf{domain} (the set which this function can operate on). (And $B$ the co-domain.)
+
+            We define the set
+            $$
+                \{f(x) \mid x \in A\}
+            $$
+            as the \textbf{range} of the function, which is all the outputs of the function.
+
+            At this stage, $B$ will be $\RR$ and $A$ will be a subset of $\RR$.
+        \end{definition}
+
+        \begin{definition}[one-to-one, many-to-one]
+            We call a function $f$ \textbf{one-to-one}, or injective, when
+            $$
+                f(x_1) = f(x_2) \implies x_1 = x_2.
+            $$
+            
+            This means that each output a function will produce can only appear by opeating on exactly one element.
+
+            If a function is not one-to-one, we call it \textbf{many-to-one}.
+        \end{definition}
+
+        \begin{definition}[function notations]
+            The result that $f$ maps an element of the domain $x$ to is denoted as $f(x)$. As an example, if function $f$ maps $x$ to $\sin x$, then the following are equivilant:
+            \begin{enumerate}
+                \item $f(x) = \sin x$,
+                \item $f: x \mapsto \sin x$.
+            \end{enumerate}
+        \end{definition}
+
+        \begin{definition}[inverse]
+            A function's inverse, denoted as $f^{-1}(x)$, is defined from the range of $f(x)$ to the domain of $f(x)$, and satisfies that:
+            $$
+                f^{-1}(f(x)) = f(f^{-1}(x))= x.
+            $$
+        \end{definition}
+
+        \begin{theorem}[unique inverse]
+            If the inverse of a function exists, then it is unique.
+        \end{theorem}
+
+        \begin{theorem}[condition for existance of inverse]
+            The inverse of a function exists if and only if such function is one-to-one.
+        \end{theorem}
+
+        \begin{remark}
+            The previous theorem is true if and only if such inverse is defined from the range. If such inverse is defined from the co-domain then we also require the function to surjective (i.e. range equals to co-domain) hence bijective. This is a very useful concept (isomorphism)!
+        \end{remark}
+
+        \begin{theorem}[inverse graphs]
+            The graph of a inverse of a function and the function itself is symmetric by the line $y = x$.
+        \end{theorem}
+
+        \begin{definition}[composite]
+            The composite of $f$ with $f$ denoted as $f^2$ is defined as follows:
+            $$
+            f^2(x) = f(f(x)).
+            $$
+        \end{definition}
+
+        \begin{definition}[modulus]
+            The graph of $\abs{f(x)}$ and $f(x)$ has a relationship as follows:
+
+            The graph of $\abs{f(x)}$ reflects the part of the graph of $f(x)$ below the $x$ axis with regards to the $x$ axis (basically flip it up).
+        \end{definition}
+
+    \section{Quadratic}
+        \begin{definition}[quadratic]
+            A quadratic function $f$ is defined as an element of $\PP[x]$ where $\deg f(x) = 2$.
+
+            Just kidding. A quadratic function $f$ is defined as
+            $$
+            f(x) = ax^2 + bx + c
+            $$
+            where $a \neq 0$.
+        \end{definition}
+
+        \begin{theorem}[extremum property]
+            A quadratic function $f(x)$ has a maximum if and only if $a < 0$, and it has a minimum if and only if $a > 0$. The turning point (extremum point in this case) of a quadratic is
+            $$
+                \left(-\frac{b}{2a}, \frac{4ac - b^2}{4ac}\right).
+            $$
+
+            \begin{proof}
+                We can show this by \textbf{completing the square}.
+                \begin{align*}
+                    ax^2 + bx + c &= a \left(x^2 + \frac{b}{a} x\right) + c\\
+                    &= a \left(x^2 + 2 \cdot \frac{b}{2a} \cdot x \right) + c\\
+                    &= a \left[x^2 + 2 \cdot \frac{b}{2a} \cdot x + \left(\frac{b}{2a}\right)^2\right] - a \cdot \left(\frac{b}{2a}\right)^2 + c\\
+                    &= a \cdot \left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c.
+                \end{align*}
+
+                If $a > 0$, then we have
+                \begin{align*}
+                    ax^2 + bx + c \geq -\frac{b^2}{4a} + c,
+                \end{align*}
+                where the equal sign holds if and onlly if $x = - \frac{b}{2a}$.
+
+                Similar argument holds for $a < 0$.
+            \end{proof}
+
+            \begin{proof}
+                We can also show this by \textbf{differentiation}.
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[roots]
+            The roots (solutions) to the quadratic will be
+            $$
+                x_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+            $$
+        \end{theorem}
+
+        \begin{theorem}[discriminant]
+            The \textbf{discriminant} for the quadratic $ax^2 + bx + c$ is defined as
+            $$
+                \Delta = b^2 - 4ac.
+            $$
+
+            When $\Delta > 0$, the quadratic has two distinct real roots; when $\Delta = 0$, the quadratic has two equal real roots; when $\Delta < 0$, the quadratic has two complex roots which are complex conjugate of each other (i.e. sum to a real number).
+        \end{theorem}
+
+        \begin{theorem}[quadratic and a line]
+            The intersections for a quadratic and a line (which is not perpendicular to the $x$ axis) can be found by equating their equations and solve the corresponding equation (which is a quadratic).
+        \end{theorem}
+
+        \begin{definition}[intervals]
+            We define the intervals as follows:
+            \begin{align*}
+                (a, b) &= \{x \mid a < x < b\},\\
+                (a, b] &= \{x \mid a < x \leq b\},\\
+                [a, b) &= \{x \mid a \leq x < b\},\\
+                [a, b] &= \{x \mid a \leq x \leq b\},\\
+                (a, +\infty) &= \{x \mid x > a\},\\
+                [a, +\infty) &= \{x \mid x \geq a\},\\
+                (-\infty, b) &= \{x \mid x < b\},\\
+                (-\infty, b] &= \{x \mid x \leq b\},\\
+                (-\infty, +\infty) &= \RR.
+            \end{align*}
+        \end{definition}
+
+        \begin{theorem}[quadratic inequalities]
+            A quadratic inequality can be solved by finding the two solutions (known as \textbf{critical values}).
+
+            For the quadratic $f(x) = ax^2 + bx + c$ where $a > 0$ ($a < 0$ can be considered similarly),
+            \begin{enumerate}
+                \item $\Delta > 0$. Let the two roots be $x_1$ and $x_2$.
+                
+                The solution set to $f(x) > 0$ is
+                $$
+                    (-\infty, x_1) \cup (x_2, +\infty).
+                $$
+
+                The solution set to $f(x) < 0$ is
+                $$
+                    (x_1, x_2).
+                $$
+
+                \item $\Delta = 0$. Let the root be $x_r$.
+                
+                The solution set to $f(x) > 0$ is
+                $$
+                    (-\infty, x_r) \cup (x_r, +\infty).
+                $$
+
+                The solution set to $f(x) < 0$ is $\emptyset$.
+
+                \item $\Delta < 0$. The solution set to $f(x) > 0$ is $\RR$ and the solution set to $f(x) < 0$ is $\emptyset$.
+            \end{enumerate}
+        \end{theorem}
 
     \section*{Afterwords}
         
