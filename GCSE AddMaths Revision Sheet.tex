@@ -5,6 +5,8 @@
 
 \usepackage[english]{babel}
 
+\setcounter{tocdepth}{1}
+
 \theoremstyle{remark}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -42,8 +44,141 @@
 
     \section*{What is this and why this?}
 
+        Mathematics is one of my favourite subjects and it is very important whatever you are doing in the future. It is mostly about techiniques solving problems, but the knowledge behind all those techiniques are vital for understanding. To aid practice, I produced this document based on the syllabus.
+
+        This is more of an extension of the syllabus and the structure is exactly the same. However, it provides some sample answers for those questions in the syllabus and is a good way to refer to your self assessment based on the syllabus.
+
+        I am also an IGCSE student so errors are inevitable in this document. Feel free to email \href{eason.syc@icloud.com}{eason.syc@icloud.com} to point out any mistakes or submit an issue on the GitHub page!
+
         This document assumes prior knowledge in CIE IGCSE Mathematics.
+
+    \setcounter{section}{-1}
     
+    \section{Prior Knowledge and Notations}
+        \subsection{Set Notations}
+
+            \begin{definition}[set and elements]
+                If $x$ is an element of set $S$, we denote $x \in S$. Otherwise, $x \notin S$.
+            \end{definition}
+
+            \begin{definition}[set constructers]
+                We have two set constructer notations:
+                $$
+                    \{x \mid P(x)\} = \{x : P(x)\}
+                $$
+                defines a set containing all $x$ satisfying condition $P(x)$.
+
+                $$
+                    \{x_1, x_2, \ldots\}
+                $$
+                defines a set with elements $x_1, x_2, \ldots$.
+            \end{definition}
+
+            \begin{definition}[empty set, universal set]
+                We use $\emptyset$ or $\varnothing$ to define the empty set (set with no elements) and use $\mathcal{E}$ to denote the universal set.
+            \end{definition}
+
+            \begin{definition}[cardinality]
+                We use $n(S)$ to denote the number of elements in set $S$.
+            \end{definition}
+
+            \begin{definition}[complement]
+                We use $S'$ to define the complement of set $S$,
+                $$
+                    S' = \{x \in \mathcal{E} \mid x \notin S\}
+                $$
+            \end{definition}
+
+            \begin{definition}[subset, proper subset]
+                We denote 
+                $$A \subseteq B$$
+                if $x \in A \implies x \in B$.
+
+                Furthermore, if $A \neq B$, we denote it as
+                $$A \subset B.$$
+            \end{definition}
+
+            \begin{definition}[union, intersection]
+                We denote
+                $$
+                    A \cap B = \{x \mid x \in A \lgand x \in B\},
+                $$
+                and
+                $$
+                    A \cup B = \{x \mid x \in A \lgor x \in B\}.
+                $$
+            \end{definition}
+
+            \begin{definition}[number sets]
+                The set $\NN$ is the natural numbers, $\NN = \{ 1, 2, 3, \ldots \}$.
+
+                The set $\ZZ$ is the integers, $\ZZ = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$.
+
+                The set $\QQ$ is the rational numbers,
+                $$
+                    \QQ = \left\{\frac{p}{q} \mid p, q \in \ZZ, q \neq 0\right\}.
+                $$
+
+                The set $\RR$ is the set of real numbers.
+            \end{definition}
+
+            \begin{definition}[intervals]
+                We define the intervals as follows:
+                \begin{align*}
+                    (a, b) &= \{x \mid a < x < b\},\\
+                    (a, b] &= \{x \mid a < x \leq b\},\\
+                    [a, b) &= \{x \mid a \leq x < b\},\\
+                    [a, b] &= \{x \mid a \leq x \leq b\},\\
+                    (a, +\infty) &= \{x \mid x > a\},\\
+                    [a, +\infty) &= \{x \mid x \geq a\},\\
+                    (-\infty, b) &= \{x \mid x < b\},\\
+                    (-\infty, b] &= \{x \mid x \leq b\},\\
+                    (-\infty, +\infty) &= \RR.
+                \end{align*}
+            \end{definition}
+
+        \subsection{Relationship Symbols and Operations}
+            \begin{definition}[implies, implied by, equivilent]
+                $A$ implies $B$ is denoted by $A \implies B$, $B$ implies $A$ is denoted by $A \impliedby B$, $A$ and $B$ are equivilent is denoted by $A \iff B$.
+            \end{definition}
+
+            \begin{definition}[sum and product]
+                We define
+                $$
+                    \sum_{i = 1}^{n} a_i = a_1 + a_2 + \ldots + a_n,
+                $$
+                and
+                $$
+                    \prod_{i = 1}^{n} a_i = a_1 \cdot a_2 \cdots a_n.
+                $$
+            \end{definition}
+
+            \begin{definition}[binominal coefficient and factorial]
+                We define
+                $$
+                    n! = n \cdot (n - 1) \cdots 1,
+                $$
+                with $0! = 1$, hence defining
+                $$
+                    \binom{n}{r} = \frac{n!}{r!(n-r)!}
+                $$
+            \end{definition}
+        \subsection{Functions}
+            \begin{definition}[composite of two functions]
+                We define
+                $$
+                    gf(x) = g(f(x)).
+                $$
+            \end{definition}
+
+            \begin{definition}[derivative]
+                We denote
+                $$
+                    \frac{\diff^n f(x)}{\diff x^n} = f^{(n)} (x)
+                $$
+                as the $n$th derivative of $f(x)$.
+            \end{definition}
+
     \section{Functions}
 
         \begin{definition}[function, domain, image]
@@ -72,7 +207,7 @@
         \end{definition}
 
         \begin{definition}[function notations]
-            The result that $f$ maps an element of the domain $x$ to is denoted as $f(x)$. As an example, if function $f$ maps $x$ to $\sin x$, then the following are equivilant:
+            The result that $f$ maps an element of the domain $x$ to is denoted as $f(x)$. As an example, if function $f$ maps $x$ to $\sin x$, then the following are equivilent:
             \begin{enumerate}
                 \item $f(x) = \sin x$,
                 \item $f: x \mapsto \sin x$.
@@ -175,21 +310,6 @@
             The intersections for a quadratic and a line (which is not perpendicular to the $x$ axis) can be found by equating their equations and solve the corresponding equation (which is a quadratic).
         \end{theorem}
 
-        \begin{definition}[intervals]
-            We define the intervals as follows:
-            \begin{align*}
-                (a, b) &= \{x \mid a < x < b\},\\
-                (a, b] &= \{x \mid a < x \leq b\},\\
-                [a, b) &= \{x \mid a \leq x < b\},\\
-                [a, b] &= \{x \mid a \leq x \leq b\},\\
-                (a, +\infty) &= \{x \mid x > a\},\\
-                [a, +\infty) &= \{x \mid x \geq a\},\\
-                (-\infty, b) &= \{x \mid x < b\},\\
-                (-\infty, b] &= \{x \mid x \leq b\},\\
-                (-\infty, +\infty) &= \RR.
-            \end{align*}
-        \end{definition}
-
         \begin{theorem}[quadratic inequalities]
             A quadratic inequality can be solved by finding the two solutions (known as \textbf{critical values}).
 
@@ -219,6 +339,198 @@
                 \item $\Delta < 0$. The solution set to $f(x) > 0$ is $\RR$ and the solution set to $f(x) < 0$ is $\emptyset$.
             \end{enumerate}
         \end{theorem}
+
+    \section{Equations, inequalities and graphs}
+        \begin{theorem}[type $\abs{ax + b} = c, a \neq 0, c \geq 0$]
+            The solutions to the equation
+            $$
+                \abs{ax + b} = c
+            $$
+            is
+            $$
+                x_1 = \frac{c - b}{a}, x_2 = \frac{-c -b}{a}.
+            $$
+
+            \begin{proof}
+                The solution to this can be shown by dividing it into cases, where $ax + b = -c$ or $ax + b = c$.
+            \end{proof}
+
+            \begin{proof}
+                This solution can also be shown by squaring both sides to get rid of the absolute value and using quadratic solving methods. I would not prefer it in the first place.
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[generalise: $\abs{f(x)} = c \geq 0$]
+            The solution to this equation is the same as the solutions to $f(x) = \pm c$.
+        \end{theorem}
+
+        \begin{theorem}[type $\abs{ax + b} = \abs{cx + d}$]
+            The solutions to the equation
+            $$
+            \abs{ax + b} = \abs{cx + d}
+            $$
+            is
+            $$
+            x_{1, 2} = \frac{(cd - ab) \pm 2 (ad - bc)}{a^2 - c^2}.
+            $$
+
+            \begin{proof}
+                We can show it by squaring both sides getting
+                $$
+                (ax + b)^2 = (cx + d)^2 \implies (a^2 - c^2)x^2 + 2(ab - cd) x + (b^2 - d^2) = 0.
+                $$
+
+                The discriminant will be
+                \begin{align*}
+                    \Delta &= [2(ab - cd)]^2 - 4 (a^2 - c^2) (b^2 - d^2)\\
+                    &= 4 [(a^2 b^2 - 2abcd + c^2 d^2) - a^2b^2 - c^2d^2 + a^2 d^2 + b^2 c^2]\\
+                    &= 4 [a^2 d^2 - 2abcd + b^2 c^2]\\
+                    &= 4 (ad - bc)^2.
+                \end{align*}
+
+                Hence, solutions will be
+                \begin{align*}
+                    x_{1, 2} &= \frac{- 2 (ab - cd) \pm \sqrt{\Delta}}{2 (a^2 - c^2)}\\
+                    &= \frac{(cd - ab) \pm 2 (ad - bc)}{a^2 - c^2}.
+                \end{align*}
+            \end{proof}
+
+            \begin{proof}
+                We can also show this by considering order relationship between $-\frac{b}{a}, - \frac{d}{c}, x$ and expanding absolute values. I would not prefer it in the first place.
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[type $\abs{f(x)} = \abs{g(x)}$]
+            This solution will be the same as $[f(x)]^2 = [g(x)]^2$.
+        \end{theorem}
+
+        \begin{theorem}[type $\abs{ax + b} > / \leq c, c \geq 0$]
+            Solutions to $\abs{ax + b} > c$ with previous mentioned restrictions will be the same as the solution to
+            $$
+                (ax + b)^2 - c^2 > 0.
+            $$
+
+            I would prefer to square everything if this is a inequality, but we should be careful whether this operation is equivilent or not (will it introduce more solutions? will it ignore certain solutions?)
+        \end{theorem}
+
+        \begin{theorem}[type $\abs{ax + b} \leq \abs{cx + d}$]
+            Solutions to this will be equivilent to
+            $$
+            (a^2 - c^2) x^2 + 2(ab - cd)x + (b^2 - d^2) \leq 0.
+            $$
+
+            We can also do this by considering the relationship between $x, -\frac{b}{a}, -\frac{d}{c}$, but I think this way is easier.
+        \end{theorem}
+
+        \begin{theorem}[graph of $p(x) = k (x-a) (x-b) (x-c), k \neq 0$]
+            The graph of $p(x)$ will satisfies the follows:
+            $$
+                \lim_{x \rightarrow +\infty} p(x) = \lim_{x \rightarrow -\infty} p(x) = +\infty (\text{if $k$ > 0}), = -\infty (\text{if $k$ < 0}),
+            $$
+            which shows the trends of the graph of $p(x)$ when it approaches infinity (go further to the left/right) has the same symbol as $k$.
+
+            Furthermore, the intersections of $p(x)$ and $x$-axis will be $ a, b, c$, since intersection with $x$-axis implies $p(x) = 0$ (and they are the only ones due to the fundamental theorem of algebra).
+        \end{theorem}
+
+    \section{Indices and surds}
+        In this section we will recall the full definition of the power of a positive number.
+
+        \begin{definition}[$a^b$ where $a > 0, b \in \NN$]
+            We inductively define it by base case
+            $$a^0 = 1,$$
+            and $$a^b = a^{b - 1} \cdot a\text{ for } b \geq 1,$$
+            in the positive direction, and
+            $$a^b = a^{b + 1} \cdot \frac{1}{a}\text{ for } b \leq -1$$
+            in the negative direction.
+        \end{definition}
+
+        \begin{definition}[$a^b$ where $a > 0, b = \frac{p}{q}, p \in \ZZ, q \in \NN$]
+            We define it as
+            $$
+                a^{b} = a^{\frac{p}{q}} = \sqrt[q]{a^p}.
+            $$
+        \end{definition}
+
+        \begin{theorem}[calculation properties of powers]
+            We have
+            \begin{align*}
+                a^b \cdot a^c &= a^{b + c},\\
+                (a^b)^c = (a^c)^b &= a^{bc},\\
+                (ab)^c &= a^c b^c.
+            \end{align*}
+
+            Readers should verify that the previous two definitions are actually well-defined under those properties (because I believe those properties are the reason why we define it as previously defined).
+        \end{theorem}
+
+        For those $b \in \QQ'$ (i.e. $b$ is a irrational number), we define it by a limit of rational numbers (Cauchy Sequence).
+
+        To rationalise a fraction, we use the following theorem (in fact, a method)
+        
+        \begin{theorem}[rationalising denominator]
+            We have
+            $$
+                \frac{k}{\sqrt{a}} = \frac{k \sqrt{a}}{a},
+            $$
+            $$
+                \frac{k}{\sqrt{a} - \sqrt{b}} = \frac{k(\sqrt{a} + \sqrt{b})}{a - b},
+            $$
+            $$
+                \frac{k}{\sqrt{a} + \sqrt{b}} = \frac{k(\sqrt{a} - \sqrt{b})}{a - b}.
+            $$
+        \end{theorem}
+
+    \section{Factors of polynomials}
+        \begin{definition}[polynomial]
+            A polynomial is an element of the linear space/communicative ring $\PP [x]$.
+
+            Just kidding. A \textbf{polynomial} $p(x)$ can be expressed as a sum
+            $$
+                p(x) = \sum_{i = 0}^{n} k_i x^i
+            $$
+            for some non-negative integer $n$ which we call it the degree (DANGER ZONE! degree of the polynomial 0 is negative infinity), and real number $k_i$s which are not all 0. 
+        \end{definition}
+
+        \begin{definition}[root]
+            A \textbf{root} $x_0$ of a polynomial $p(x)$ satisfies that $p(x_0) = 0$.
+        \end{definition}
+
+        \begin{theorem}[factor theorem]
+            $x_0$ is a root of $p(x)$ if and only if $(x - x_0)$ is a factor of $p(x)$.
+
+            \begin{proof}
+                By basic properties of division, let $p(x) = q(x) (x - x_0) + r(x)$.
+
+                If $x_0$ is a root of $p(x)$, then by definition we have $p(x_0) = r(x) = 0$ which means $p(x)$ has a remainder of $0$ upon division by $x - x_0$.
+                
+                If $x - x_0$ is a factor of $p(x)$, we have $r(x) = 0$ and $p(x) = q(x) (x - x_0)$. Plugging in $x = x_0$ will give use $p(x) = 0$ hence $x_0$ is a root of $p(x)$.
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[remainder theorem]
+            The remainder of $p(x)$ divided by $(x - x_0)$ will be equal to $p(x_0)$.
+
+            \begin{proof}
+                
+            \end{proof}
+        \end{theorem}
+
+    \section{Simultaneous equations}
+
+    \section{Logarithmic and exponential functions}
+
+    \section{Straight line graphs}
+
+    \section{Circular measure}
+
+    \section{Trigonometry}
+
+    \section{Differentiation and integration}
+
+    \section{Vectors in two dimensions}
+
+    \section{Permutations and combinations}
+
+    \section{Series}
 
     \section*{Afterwords}
         
