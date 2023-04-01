@@ -455,16 +455,31 @@
             We have
             \begin{align*}
                 a^b \cdot a^c &= a^{b + c},\\
+                \frac{a^b}{a^c} &= a^{b - c},\\
                 (a^b)^c = (a^c)^b &= a^{bc},\\
-                (ab)^c &= a^c b^c.
+                (ab)^c &= a^c b^c,\\
+                \left(\frac{a}{b}\right)^c &= \frac{a^c}{b^c}\\
+                a^0 &= 1,\\
+                a^{-n} &= \frac{1}{a^n},\\
+                a^{\frac{1}{n}} &= \sqrt[n]{a},\\
+                a^{\frac{m}{n}} &= \left(\sqrt[n]{a}\right)^m = \sqrt[n]{a^m}.
             \end{align*}
 
             Readers should verify that the previous two definitions are actually well-defined under those properties (because I believe those properties are the reason why we define it as previously defined).
         \end{theorem}
 
+        \begin{theorem}[calculation properties of roots]
+            We have
+            \begin{align*}
+                \sqrt{ab} &= \sqrt{a} \cdot \sqrt{b},\\
+                \sqrt{\frac{a}{b}} &= \frac{\sqrt{a}}{\sqrt{b}},\\
+                \sqrt{a} \cdot \sqrt{a} &= a.
+            \end{align*}
+        \end{theorem}
+
         For those $b \in \QQ'$ (i.e. $b$ is a irrational number), we define it by a limit of rational numbers (Cauchy Sequence).
 
-        To rationalise a fraction, we use the following theorem (in fact, a method)
+        To rationalise a fraction, we use the following theorem (in fact, a method, by conjugate roots)
         
         \begin{theorem}[rationalising denominator]
             We have
@@ -516,10 +531,117 @@
 
     \section{Simultaneous equations}
         
+        This section does not have a lot to do.
+
+        Two ways of solving simultaneous equations are \textbf{elimination} or \textbf{substitution}.
+
+        There is an advanced way of dealing with Linear Equations (i.e. unknown maximum power of 1) by using matrices, ranks (linear algebra) and Gaussian Elimination. But it's just elimination, using more advanced way to express so.
+    
+    \section{Logarithmic and exponential functions}
+        \begin{definition}[exponential functions]
+            An exponential function $f(x)$ has the form of follows
+            $$
+                f(x) = a^x
+            $$
+            where $a > 0$ and $a \neq 1$.
+
+            Exponential functions are defined on $\RR$ and has a range of $(0, +\infty)$.
+        \end{definition}
+
+        \begin{definition}[logarithm]
+            We define the function $\log_a x$ as the inverse of $a^x$ where $a > 0$, $a \neq 1$. In fact,
+            $$
+                y = a^x \iff x = \log_a y, a > 0, a \neq 1.
+            $$
+        \end{definition}
+
+        \begin{definition}[logarithm functions]
+            A logarithmic function $f(x)$ has the form of follows
+            $$
+                f(x) = \log_a x
+            $$ 
+            wherer $a > 0$ and $a \neq 1$.
+
+            In the case of $a = e$, we denote it as
+            $$
+                f(x) = \ln x,
+            $$
+            and in the case of $a = 10$, we denote it as
+            $$
+                f(x) = \lg x.
+            $$
+
+            Logarithmic functions are defined on $(0, +\infty)$ and has a range of $\RR$.
+        \end{definition}
+    
+        \begin{definition}[logarithm calculation basics]
+            We have
+            $$
+                \log_a a = 1, \log_a 1 = 0, \log_a a^x = x, a^{\log_a x} = x.
+            $$
+        \end{definition}
+
+        \begin{definition}[logarithm calculation rules]
+            We have
+            \begin{align*}
+                \log_a (xy) &= \log_a x + \log_a y, \\
+                \log_a \left(\frac{x}{y}\right) &= \log_a x - \log_a y,\\
+                \log_a (x^m) &= m \log_a x,\\
+                \log_a \left(\frac{1}{x}\right) &= - \log_a x.
+            \end{align*}
+        \end{definition}
+
+        
 
     \section{Straight line graphs}
+        \begin{definition}[straight line]
+            A \textbf{straight line} is an equation of the form $y = mx + c$, where $m$ is the \textbf{gradient} and $c$ is the \textbf{$y$-interception}.
+        \end{definition}
 
-    \section{Logarithmic and exponential functions}
+        \begin{definition}[expression forms]
+            Other forms of expressing lines include
+            $$
+                ax + by + c = 0,
+            $$
+            and when we know a gradient and a point, we can use
+            $$
+                (y - y_0) = m(x - x_0).
+            $$
+        \end{definition}
+
+        \begin{theorem}[mid-point]
+            The mid-point of a ling segment with points $A(x_1, y_1)$ and $B(x_2, y_2)$ is
+            $$
+                M\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right).
+            $$
+        \end{theorem}
+
+        \begin{theorem}[length/distance]
+            The distance between two points $A(x_1, y_1)$ and $B(x_2, y_2)$ is
+            $$
+                \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}.
+            $$
+        \end{theorem}
+
+        \begin{theorem}[parallel condition]
+            Two lines $l_1: y = m_1 x + c_1$ and $l_2: y = m_2 x + c_2$ are parallel if and only if $m_1 = m_2$.
+        \end{theorem}
+
+        \begin{theorem}[perpendicular condition]
+            Two lines $l_!: y = m_1 x + c_1$ and $l_2: y = m_2 x + c_2$ are perpendicular if and only if $m_1 m_2 = -1$.
+        \end{theorem}
+
+        \begin{theorem}[area of a triangle]
+            The area of a triangle of three vertices $A(x_1, y_1), B(x_2, y_2), C(x_3, y_3)$ is equal to
+            $$
+                S = \frac{1}{2} \abs{\begin{vmatrix}
+                    1 & 1 & 1\\
+                    x_1 & x_2 & x_3\\
+                    y_1 & y_2 & y_3
+                \end{vmatrix}}
+                = \frac{1}{2} \abs{x_1 y_2 + x_2 y_3 + x_3 y_1 - x_2 y_1 - x_3 y_2 - x_1 y_3}.
+            $$
+        \end{theorem}
 
     \section{Circular measure}
 
