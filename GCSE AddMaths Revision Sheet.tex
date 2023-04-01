@@ -574,24 +574,64 @@
             Logarithmic functions are defined on $(0, +\infty)$ and has a range of $\RR$.
         \end{definition}
     
-        \begin{definition}[logarithm calculation basics]
+        \begin{theorem}[logarithm calculation basics]
             We have
             $$
                 \log_a a = 1, \log_a 1 = 0, \log_a a^x = x, a^{\log_a x} = x.
             $$
-        \end{definition}
+        \end{theorem}
 
-        \begin{definition}[logarithm calculation rules]
+        \begin{theorem}[logarithm calculation rules]
             We have
             \begin{align*}
                 \log_a (xy) &= \log_a x + \log_a y, \\
                 \log_a \left(\frac{x}{y}\right) &= \log_a x - \log_a y,\\
-                \log_a (x^m) &= m \log_a x,\\
-                \log_a \left(\frac{1}{x}\right) &= - \log_a x.
+                \log_a (x^m) &= m \log_a x.
             \end{align*}
-        \end{definition}
+        \end{theorem}
 
+        \begin{corollary}
+            $$
+            \log_a \left(\frac{1}{x}\right) = - \log_a x.
+            $$
+        \end{corollary}
+
+        \begin{theorem}[change of base]
+            We have
+            $$
+                \log_b a = \frac{\log_c a}{\log_c b}.
+            $$
+        \end{theorem}
         
+        \begin{corollary}
+            $$
+                \log_b a = \frac{1}{\log_a b}.
+            $$
+        \end{corollary}
+
+        \begin{theorem}[graphs of exponentials]
+            For a exponential $a^x$ where $a > 1$, we have
+            $$
+                \lim_{x \rightarrow +\infty} a^x = +\infty, \lim_{x \rightarrow -\infty} a^x = 0.
+            $$
+
+            For a exponential $a^x$ where $a < 1$, we have
+            $$
+                \lim_{x \rightarrow +\infty} a^x = 0, \lim_{x \rightarrow -\infty} a^x = +\infty.
+            $$
+        \end{theorem}
+
+        \begin{theorem}[graphs of logarithms]
+            For a logarithm $\log_a x$ where $a > 1$, we have
+            $$
+                \lim_{x \rightarrow 0^+} \log_a x = -\infty, \lim_{x \rightarrow +\infty} \log_a x = +\infty.
+            $$ 
+
+            For a logarithm $\log_a x$ where $a < 1$, we have
+            $$
+                \lim_{x \rightarrow 0^+} \log_a x = +\infty, \lim_{x \rightarrow +\infty} \log_a x = -\infty.
+            $$
+        \end{theorem}
 
     \section{Straight line graphs}
         \begin{definition}[straight line]
