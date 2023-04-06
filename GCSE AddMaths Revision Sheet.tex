@@ -712,7 +712,101 @@
 
     \section{Trigonometry}
         
-        
+        \begin{definition}[trig functions, prior knowledge]
+            In a right-angle triangle with hypotenuse $r$, angle $\theta$, oppopsite edge $y$ and adjacent edge $x$, we define
+            $$
+                \sin \theta = \frac{y}{r}, \cos \theta = \frac{x}{r}, \tan \theta = \frac{y}{x}.
+            $$
+        \end{definition}
+
+        \begin{theorem}[value of important angles]
+            $$\sin 0 = 0, \cos 0 = 1, \tan 0 = 0,$$
+            $$\sin \frac{\pi}{6} = \frac{1}{2}, \cos \frac{\pi}{6} = \frac{\sqrt{3}}{2}, \tan \frac{\pi}{6} = \frac{1}{\sqrt{3}},$$
+            $$\sin \frac{\pi}{4} = \frac{\sqrt{2}}{2}, \cos \frac{\pi}{4} = \frac{\sqrt{2}}{2}, \tan \frac{\pi}{4} = 1,$$
+            $$\sin \frac{\pi}{3} = \frac{\sqrt{3}}{2}, \cos \frac{\pi}{3} = \frac{1}{2}, \tan \frac{\pi}{3} = \sqrt{3},$$
+            $$\sin \frac{\pi}{2} = 1, \cos \frac{\pi}{2} = 0, \tan \frac{\pi}{2} = \infty.$$
+        \end{theorem}
+
+        \begin{definition}[angle]
+            An \textbf{angle} is a measure of the rotation of a line $OP$ around $O(0, 0)$ from the positive $x$-direction, with anti-clockwise taken as positive angle and clockwise as negative.
+        \end{definition}
+
+        \begin{definition}[trig functions]
+            Trigonometric ratios of any angle $\theta$ can be defined as
+            $$
+                \sin \theta = \frac{y}{r}, \cos \theta = \frac{x}{r}, \tan \theta = \frac{y}{x},
+            $$
+            where $P(x, y)$ and $r = OP = \sqrt{x^2 + y^2}$.
+        \end{definition}
+
+        \begin{theorem}
+            All trig functions are positive in the first quadrant. Only $\sin$ is positive in the second quadrant. Only $\tan$ is positive in the third quadrant. Only $\cos$ is positive in the fourth quadrant.
+        \end{theorem}
+
+        \newcommand{\cosec}{\mathrm{cosec}}
+
+        \begin{definition}[$\cot, \sec, \cosec$]
+            We define the three extra trig functions as follows:
+            $$
+                \cot \theta = \frac{x}{y}, \sec \theta = \frac{r}{x}, \cosec \theta = \frac{r}{y}.
+            $$
+        \end{definition}
+
+        \begin{theorem}[trig identities]
+            The following trig identities are very basic and important:
+            $$
+                \cosec \theta = \frac{1}{\sin \theta}, \sec \theta = \frac{1}{\cos \theta}, \cot \theta = \frac{1}{\tan \theta},
+            $$
+            $$
+                \sin^2 \theta + \cos^2 \theta = 1, 1 + \tan^2 \theta = \sec^2 \theta, \cot^2 \theta + 1 = \cosec^2 \theta,
+            $$
+            $$
+                \tan \theta = \frac{\sin \theta}{\cos \theta}, \cot \theta = \frac{\cos \theta}{\sin \theta}.
+            $$
+
+            In this case I feel I have to make the following clear while dealing with $\infty$ of $\tan, \cot, \sec, \cosec$. We treat $0 \cdot \infty = 1, 0 = \frac{1}{\infty}, \infty = \frac{1}{0}$. DANGER! Informal use of notation.
+        \end{theorem}
+
+        \begin{definition}[periodic function]
+            For a function $f: A \rightarrow B$, if for a certain real number $T$, we have $x \in A \implies x + T \in A$, and
+            $$f(x) = f(x + T)$$
+            for all $x \in A$, we say $T$ is a \textbf{period} of the function $f$. We say $T$ is a \textbf{minimum positive period} if $T$ is the smallest positive number which is a period of that function.
+        \end{definition}
+
+        \begin{theorem}[trig as functions]
+            The function $y = \sin x$ has a domain of $\RR$ and a range of $[-1, 1]$. It has a minimum positive period of $2\pi$, and an amplitude of $1$. Restricting its domain onto $[-\frac{\pi}{2}, \frac{\pi}{2}]$, its inverse, defined from $[-1, 1]$ to $[-\frac{\pi}{2}, \frac{\pi}{2}]$ is denoted as $\arcsin x$.
+
+            The function $y = \cos x$ has a domain of $\RR$ and a range of $[-1, 1]$. It has a minimum positive period of $2\pi$, and an amplitude of $1$. Restricting its domain to $[0, \pi]$, its inverse, defined from $[-1, 1]$ onto $[0, \pi]$ is denoted as $\arccos x$.
+
+            The function $y = \tan x$ has a domain of $\RR \setminus \{\frac{\pi}{2} + k\pi \mid k \in \ZZ\}$ (all real numbers except for $\{\ldots, -\frac{\pi}{2}, \frac{\pi}{2}, \frac{3\pi}{2}, \ldots\}$), and a range of $\RR$. It has a minimum positive period of $\pi$. Restricting its domain to $(-\frac{\pi}{2}, \frac{\pi}{2})$, its inverse, defined from $\RR$ onto $(-\frac{\pi}{2}, \frac{\pi}{2})$ is denoted as $\arctan x$.
+
+            Notice that since $\forall k \in \ZZ$, we have
+            $$
+                \lim_{x \rightarrow k\pi + \frac{\pi}{2}} \tan x = \infty,
+            $$
+            we know that the lines $x = k\pi + \frac{\pi}{2}, k \in \ZZ$ are the vertical asymptotes for $y = \tan x$.
+
+            The function $y = \cot x$ has a domain of $\RR \setminus \{k\pi \mid k \in \ZZ\}$ (all real numbers except for $\{\ldots, -\pi, 0, \pi, 2\pi, \ldots\}$), and a range of $\RR$. It has a minimum positive period of $\pi$.
+
+            Notice that since $\forall k \in \ZZ$, we have
+            $$
+                \lim_{x \rightarrow k\pi} \cot x = \infty,
+            $$
+            we know that the lines $x = k\pi, k \in \ZZ$ are the vertical asymptotes for $y = \cot x$.
+
+            The function $y = \sec x$ has a domain of $\RR \setminus \{\frac{\pi}{2} + k\pi \mid k \in \ZZ\}$ and a range of $(-\infty, -1] \cup [1, +\infty)$. It has a minimum positive period of $2\pi$.
+
+            The function $y = \csc x$ has a domain of $\RR \setminus \{k\pi \mid k \in \ZZ\}$ and a range of $(-\infty, -1] \cup [1, +\infty)$. It has a minimum positive period of $2\pi$.
+        \end{theorem}
+
+        \begin{theorem}[trig function manipulations]
+            The function $y = a \sin bx + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
+
+            The function $y = a \cos bx + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
+
+            The function $y = a \tan bx + c$ stretches the graph vertically by a factor of $a$, has a period of $\frac{\pi}{b}$ and is translated upwards by $c$ units.
+        \end{theorem}
+
 
     \section{Differentiation and integration}
 
