@@ -830,8 +830,166 @@
 
 
     \section{Differentiation and integration}
+        \subsection{Differentiation}
 
-        
+            \begin{definition}[derivative]
+                We define the \textbf{gradient} or \textbf{derivative} of a function $f: A \rightarrow B$ at a point $x_0$, given that it is defined at a neighbourhood of $x_0$ (i.e. $\exists \delta, (x_0 - \delta, x_0 + \delta) \subseteq A$), is equal to
+                $$
+                    \lim_{x \rightarrow x_0} \frac{f(x) - f(x_0)}{x - x_0}.
+                $$
+                We will denote the previous value as
+                $$
+                    f'(x_0), \at{\frac{\diff f(x)}{\diff x}}{x = x_0}, \at{\frac{\diff}{\diff x} f(x)}{x = x_0}.
+                $$
+
+                The \textbf{derivative function} or \textbf{gradient function} of $f(x)$ is denoted as
+                $$
+                    f'(x), \frac{\diff f(x)}{\diff x}, \frac{\diff}{\diff x} f(x).
+                $$
+            \end{definition}
+
+            \begin{theorem}[linearality of differential operator]
+                Given functions $f(x)$ and $g(x)$ and a constant $k$, we have
+                $$
+                    \frac{\diff}{\diff x} (f(x) + g(x)) = \frac{\diff}{\diff x} f(x) + \frac{\diff}{\diff x} g(x),
+                $$
+                $$
+                    \frac{\diff}{\diff x} (k f(x)) = k\frac{\diff}{\diff x} f(x).
+                $$
+            \end{theorem}
+
+            \begin{theorem}[chain rule]
+                The \textbf{chain rule} states that
+                $$
+                    \frac{\diff y}{\diff x} = \frac{\diff y}{\diff u} \cdot \frac{\diff u}{\diff x}.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[product rule]
+                We have
+                $$
+                    \frac{\diff}{\diff x} (uv) = u \frac{\diff}{\diff x} v + v \frac{\diff}{\diff x} u.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[quotient rule]
+                We have
+                $$
+                    \frac{\diff}{\diff x}\left(\frac{u}{v}\right) = \frac{v \frac{\diff u}{\diff x} - u \frac{\diff v}{\diff x}}{v^2}.
+                $$
+            \end{theorem}
+
+            \begin{definition}[tangents and normals]
+                For a function $y = f(x)$, the \textbf{gradient} at the point $P(x_0, f(x_0))$ is equal to $f'(x_0)$.
+
+                The \textbf{tangent} has the equation of
+                $$
+                    y - f(x_0) = f'(x_0) (x - x_0),
+                $$
+                and the \textbf{normal} has the equation of
+                $$
+                    y - f(x_0) = - \frac{1}{f'(x_0)} (x - x_0).
+                $$
+            \end{definition}
+
+            \begin{theorem}[small increments]
+                For two points $P(x, y)$ and $Q(x + \delta x, y + \delta y)$ on the curve, if $\delta x$ is sufficiently small (i.e. $P$ and $Q$ are sufficiently close), then we have
+                $$
+                    \frac{\delta y}{\delta x} \approx \frac{\diff y}{\diff x}.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[rate of change]
+                When we do rate of change questions, note that the rate of change of variable $v$ will be
+                $$
+                    \frac{\diff}{\diff t} v,
+                $$
+                and we may use the chain rule and the rule that
+                $$
+                    \frac{\diff x}{\diff y} = \frac{1}{\frac{\diff y}{\diff x}}.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[differentiation of polynomials/power functions]
+                The power function $y = x^n$ satisfies that
+                $$
+                    \frac{\diff y}{\diff x} = n x ^ {n - 1}.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[differentiation of trig functions]
+                We have
+                $$
+                    \frac{\diff}{\diff x} \sin x = \cos x,
+                $$
+                $$
+                    \frac{\diff}{\diff x} \cos x = - \sin x,
+                $$
+                $$
+                    \frac{\diff}{\diff x} \tan x = \sec^2 x.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[differentiation of exponential and logarithmic]
+                We have
+                $$
+                    \frac{\diff}{\diff x} e^x = e^x,
+                $$
+                $$
+                    \frac{\diff}{\diff x} \ln x = \frac{1}{x}.
+                $$
+            \end{theorem}
+
+            \begin{definition}[second derivative]
+                The \textbf{second derivative} is obtained by differentiating the first derivative. We denote it as
+                $$
+                    f''(x), \frac{\diff^2}{\diff x^2} f(x), \frac{\diff^2 f(x)}{\diff x^2}, \frac{\diff}{\diff x} \frac{\diff f(x)}{\diff x}.
+                $$
+            \end{definition}
+
+            From now on, we will consider derivatives and the graph of the function. To make things easier, we will assume that the function $f(x)$ is differentiable.
+
+            \begin{definition}[stationary point, turning point]
+                The \textbf{stationary point} or \textbf{turning point} is a point where the gradient is zero.
+            \end{definition}
+
+            \begin{definition}[maximum point, minimum point]
+                A point $(x_0, f(x_0))$ is a \textbf{maximum point} if for a certain neighbourhood $(x_0 - \delta, x_0 + \delta)$ within its domain we have
+                $$
+                    \forall x \in (x_0 - \delta, x_0 + \delta) : f(x) \leq f(x_0).
+                $$
+
+                A minimum point is defined similarly.
+            \end{definition}
+
+            \begin{lemma}[maximum/minimum and stationary point]
+                A maximum point/minimum point must be a stationary point.
+            \end{lemma}
+
+            \begin{theorem}[maximum, minimum, point of inflextion]
+                For a point $P(x_0, f(x_0))$, it is a \textbf{maximum point} if and only if (in our discussion domain):
+                $$
+                    f'(x_0) = 0,
+                $$
+                and $f'(x)$ turns from positive to negative at the point $x = x_0$.
+
+                The condition of a minimum point is defined similarly.
+
+                If a point which is a stationary point but is not a maximum or a minimum, we call it a \textbf{point of inflextion}. It must satisfy that $f'(x)$ breifly 'touches' $0$ from positive to positive or from negative to negative.
+            \end{theorem}
+
+            \begin{theorem}[second derivative test]
+                If for a stationary point $P(x_0, f(x_0))$, consider the second derivative at that point,
+                \begin{itemize}
+                    \item If $f''(x_0) > 0$, it is a minimum;
+                    \item if $f''(x_0) < 0$, it is a maximum;
+                    \item if $f''(x_0) = 0$, it is indeterminable by this method.
+                \end{itemize}
+                
+                Notice that one can use this method if and only if the point investigating is a stationary point. 
+            \end{theorem}
+
+        \subsection{Integration}
 
     \section{Vectors in two dimensions}
 
