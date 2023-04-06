@@ -828,7 +828,6 @@
             The function $y = a \tan bx + c$ stretches the graph vertically by a factor of $a$, has a period of $\frac{\pi}{b}$ and is translated upwards by $c$ units.
         \end{theorem}
 
-
     \section{Differentiation and integration}
         \subsection{Differentiation}
 
@@ -990,6 +989,105 @@
             \end{theorem}
 
         \subsection{Integration}
+            \begin{definition}[indefinite integral]
+                If we have a function $f(x)$, and we have a function $F(x)$ s.t. $F'(x) = f(x)$, we say $F(x)$ is an \textbf{antiderivative} of function $f(x)$. Without proof we say that $F(x)$ can form a class of functions with difference of a constant. Hence we can define the \textbf{indefinite integral} as
+                $$
+                    \int f(x) \diff x = F(x) + C,
+                $$
+                where $C$ is called the \textbf{integration constaant}.
+            \end{definition}
+
+            \begin{theorem}[linearality of indefinite integrals]
+                For two functions $f(x)$, $g(x)$ and a constant $k$, we have
+                $$
+                    \int (f(x) + g(x)) \diff x = \int f(x) \diff x + \int g(x) \diff x,
+                $$
+                $$
+                    \int k f(x) \diff x = k \int f(x) \diff x.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[integration of polynomials and powers]
+                For a function $y = x^n$ where $n \neq -1$, we have
+                $$
+                    \int x^n \diff x = \frac{1}{n + 1} x^{n + 1} + C.
+                $$
+
+                We also have
+                $$
+                    \int \frac{1}{x} \diff x = \ln \abs{x} + C.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[integration of exponential]
+                We have
+                $$
+                    \int e^x \diff x = e^x + C.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[integration of trigs]
+                We have
+                $$
+                    \int \sin x \diff x = - \cos x + C,
+                $$
+                $$
+                    \int \cos x \diff x = \sin x + C.
+                $$
+            \end{theorem}
+
+            \begin{theorem}[substitution in integration]
+                We have
+                $$
+                    \int f(g(x)) \cdot g'(x) \diff x = \int f(g(x)) \diff g(x),
+                $$
+                and if $g'(x)$ is a constant, we can have
+                $$
+                    \int f(g(x)) \diff x = \frac{1}{g'(x)} \int f(g(x)) \diff g(x)
+                $$
+
+                Using this we can find the composite of previous functions with $ax + b$.
+            \end{theorem}
+
+            \begin{definition}[definite integral, Riemann integral]
+                The \textbf{definite integral}, in this case the \textbf{Riemann integral} of a function $f(x)$ from lower limit $a$ to upper limit $b$, is defined as the area below the graph of $f(x)$ from $a$ to $b$, is denoted as
+                $$
+                    \int_{a}^{b} f(x) \diff x.
+                $$
+            \end{definition}
+            
+            \begin{theorem}[Newton--Leibniz Formula, fundamental theorem of calculus]
+                We have
+                $$
+                    \int_a^b f(x) \diff x = \left[F(x)\right]_a^b = F(b) - F(a),
+                $$
+                where $F(x)$ is an antiderivative of $f(x)$.
+                \begin{proof}
+                    A basic explanation is: when we 'sum' together some small increments (significance of Riemann Integral) which are derivatives of the original function, we in fact just get the increasement in the original function itself!
+                \end{proof}
+            \end{theorem}
+
+            \begin{definition}[kinematics]
+                For displacement $s$, velocity $v$, acceleration $a$, time $t$, we have
+                $$
+                    v = \dot{s} = \frac{\diff s}{\diff t}, a = \dot{v} = \frac{\diff v}{\diff t} = \ddot{s} = \frac{\diff^2 s}{\diff t^2}.
+                $$
+            \end{definition}
+
+            \begin{corollary}[integration point of view]
+                We have
+                $$
+                    v = \int a \diff t, s = \int v \diff t.
+                $$
+            \end{corollary}
+
+            \begin{definition}[kinematics word description]
+                If $s > 0$, we can say the object is to the right of $O$. If $s = 0$, we can say the object is at $O$. If $s < 0$, we can say the object is to the left of $O$.
+
+                If $v > 0$, we can say the object is moving to the right. If $v = 0$, we can say the object is at rest (instantaneously). If $v < 0$, we can say the object is moving to the left.
+
+                If $a > 0$, we can say the velocity is increasing. If $a = 0$, we can say velocity can be maximum, minimum, or constant. If $a < 0$, we can say velocity is decreasing.
+            \end{definition}
 
     \section{Vectors in two dimensions}
 
