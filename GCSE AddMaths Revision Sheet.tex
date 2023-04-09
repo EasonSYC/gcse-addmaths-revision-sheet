@@ -716,9 +716,9 @@
         \end{corollary}
 
         \begin{corollary}
-            Multiply $\frac{180}{\pi}$ to convert degree to radian.
+            Multiply $\frac{180}{\pi}$ to convert degrees to radians.
             
-            Multiply $\frac{\pi}{180}$ to convert radian to degree.
+            Multiply $\frac{\pi}{180}$ to convert radians to degrees.
         \end{corollary}
 
         \begin{corollary}[arc length]
@@ -899,7 +899,7 @@
             \end{theorem}
 
             \begin{theorem}[rate of change]
-                When we do rate of change questions, note that the rate of change of variable $v$ will be
+                When we do those rate of change questions, note that the rate of change of variable $v$ will be
                 $$
                     \frac{\diff}{\diff t} v,
                 $$
@@ -1095,11 +1095,160 @@
 
     \section{Permutations and combinations}
 
-        
+        \begin{definition}[factorial]
+            We define $n!$ as the product of numbers from $1$ to $n$. An inductive definition of it will be
+            $$
+                n! = n \cdot (n-1)!,
+            $$
+            with the definition of $0! = 0$.
+        \end{definition}
+
+        \begin{theorem}[arrangement, all, line]
+            The number of ways of arranging $n$ distinct items in a line equals $n!$.
+            \begin{proof}
+                Proof by induction. This is true for $1$ items since $1! = 1$. Assume arranging $(n - 1)$ items in a line has $(n - 1)!$. Then choosing the first item has $n$ choices and arranging the rest $(n - 1)$ has $(n - 1)!$ choices. So in total, we have $n! = n \cdot (n - 1)!$ choices. 
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[permutation, some]
+            The number of permutations of $r$ items from $n$ distinct items is
+            $$
+                ^nP_r = \frac{n!}{(n-r)!} = n \cdot (n-1) \cdots (n - r + 1).
+            $$
+            \begin{proof}
+                Choosing the first object in the $r$-length permutation will have $n$ choices. The second one will have $(n - 1)$ choices. This extends to the $r$th object which has $(n - r + 1)$ choices.
+            \end{proof}
+        \end{theorem}
+
+        \begin{remark}
+            Order matters in permutations/arrangements.
+        \end{remark}
+
+        \begin{theorem}[combination, some]
+            The number of combinations of $r$ items from $n$ distinct items is
+            $$
+                ^nC_r = \binom{n}{r} = \frac{n!}{r! (n-r)!}.
+            $$
+            \begin{proof}
+                This is because we counted $r!$ for the same objects in different permutations.
+            \end{proof}
+        \end{theorem}
+
+        \begin{remark}
+            The order does not matter in combinations.
+        \end{remark}
+
+        \begin{theorem}[arrangement, repeating]
+            Say there are $a_1$ same objects of type $1$, $a_2$ same objects of type $2$, all the way to $a_k$ same objects of type $k$. Say the total number of objects is $n$. Then the total number of arrangements will be
+            $$
+                \frac{n!}{a_1! a_2! \cdots a_k!}.
+            $$
+            \begin{proof}
+                We now say the objects are different. Then we have $n!$ choices. Each 'different object arrangement' within a certain type is counted as $a_1!, a_2!, \ldots, a_k!$ types so we divide them by this.
+            \end{proof}
+            \begin{proof}
+                We can think of this as a combinatoric argument. The number of choices will be
+                $$
+                    \binom{n}{a_1} \cdot \binom{n - a_1}{a_2} \cdot \binom{n - a_1 - a_2}{a_3} \cdots \binom{n - a_1 - a_2 \cdots - a_{k - 1}}{a_k}.
+                $$
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[permutation, repeating]
+            Say there are $r$ choices for each of the $n$ positions (e.g. password). The number of total permutations will be $r^n$.
+        \end{theorem}
 
     \section{Series}
 
+        \begin{theorem}[binominal theorem]
+            We have
+            $$
+                (a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \binom{n}{2} a^{n - 2}b^2 + \cdots + \binom{n}{n - 1} a b^{n - 1} + \binom{n}{n} b^n.
+            $$
+            
+            This can also be expressed as
+            $$
+                (a + b)^n = \sum_{i = 0}^{n} \binom{n}{i} a^{n - i} b^i.
+            $$
+
+            \begin{proof}
+                We can prove this by induction. Notice that
+                $$
+                    \binom{n}{r} = \binom{n - 1}{r - 1} + \binom{n - 1}{r},
+                $$
+                which also represents Pascal's triangle.
+            \end{proof}
+        \end{theorem}
+
+        \begin{remark}
+            This can be generalised to all rational $n$s (hence all real $n$s).
+        \end{remark}
         
+        \begin{corollary}[term in a binominal expansion]
+            In a binominal expansion, the general term will be
+            $$
+                \binom{n}{r} a^r b^{n - r}.
+            $$
+        \end{corollary}
+
+        \begin{definition}[arithmetic progression/sequence]
+            An \textbf{arithmetic progression/sequence} is when the next term is the previous term plus a certain difference which we call the \textbf{common difference}. In fact, we say the following:
+            $$
+                a_n = a_{n - 1} + d.
+            $$
+        \end{definition}
+
+        \begin{theorem}[$n$th term expression]
+            By basic induction, we can have
+            $$
+                a_n = a_1 + (n - 1)d.
+            $$
+        \end{theorem}
+
+        \begin{theorem}[sum to the $n$th term]
+            We have
+            $$
+                s_n = \frac{n(a_1 + a_n)}{2} = \frac{n [2a_1 + (n - 1)d]}{2}.
+            $$
+            \begin{proof}
+                We can also prove this by induction. Notice that
+                $$
+                    a_n = s_n = s_{n - 1}.
+                $$
+            \end{proof}
+        \end{theorem}
+
+        \begin{definition}[geometric progression/sequence]
+            A \textbf{geometric progression/sequence} is when the next term is the previous term times a certain ratio which we call the \textbf{common ratio}. In fact, we say the following:
+            $$
+                g_n = g_{n - 1} \cdot r.
+            $$
+        \end{definition}
+
+        \begin{theorem}[$n$th term expression]
+            By basic induction, we can have
+            $$
+                g_n = g_1 \cdot r^{n - 1}.
+            $$
+        \end{theorem}
+
+        \begin{theorem}[sum to the $n$th term]
+            We have
+            $$
+                s_n = \frac{a (1 - r^n)}{1 - r}.
+            $$
+            \begin{proof}
+                We time $r$ to $s_n$ and minus it by the original $s_n$ to eliminate most terms.
+            \end{proof}
+        \end{theorem}
+
+        \begin{theorem}[sum to infinity]
+            We have
+            $$
+                s_\infty = \lim_{n \rightarrow \infty} s_n = \frac{a}{1 - r}.
+            $$
+            This limit exists (and has the value above) if and only if $\abs{r}<1$.
+        \end{theorem}
 
     \section*{Afterwords}
 
