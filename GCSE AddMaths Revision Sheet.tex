@@ -292,7 +292,7 @@
             \begin{proof}
                 We can show this by \textbf{completing the square}.
                 \begin{align*}
-                    ax^2 + bx + c &= a \left(x^2 + \frac{b}{a} x\right) + c\\
+                    ax^2 + b x + c &= a \left(x^2 + \frac{b}{a} x\right) + c\\
                     &= a \left(x^2 + 2 \cdot \frac{b}{2a} \cdot x \right) + c\\
                     &= a \left[x^2 + 2 \cdot \frac{b}{2a} \cdot x + \left(\frac{b}{2a}\right)^2\right] - a \cdot \left(\frac{b}{2a}\right)^2 + c\\
                     &= a \cdot \left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c.
@@ -335,7 +335,7 @@
         \begin{theorem}[quadratic inequalities]
             A quadratic inequality can be solved by finding the two solutions (known as \textbf{critical values}).
 
-            For the quadratic $f(x) = ax^2 + bx + c$ where $a > 0$ ($a < 0$ can be considered similarly),
+            For the quadratic $f(x) = ax^2 + b x + c$ where $a > 0$ ($a < 0$ can be considered similarly),
             \begin{enumerate}
                 \item $\Delta > 0$. Let the two roots be $x_1$ and $x_2$.
                 
@@ -374,7 +374,7 @@
             $$
 
             \begin{proof}
-                The solution to this can be shown by dividing it into cases, where $ax + b = -c$ or $ax + b = c$.
+                The solution to this can be shown by dividing it into cases, where $a x + b = -c$ or $a x + b = c$.
             \end{proof}
 
             \begin{proof}
@@ -427,7 +427,7 @@
         \end{theorem}
 
         \begin{theorem}[type $\abs{ax + b} > / \leq c, c \geq 0$]
-            Solutions to $\abs{ax + b} > c$ with previously mentioned restrictions will be the same as the solution to
+            Solutions to $\abs{a x + b} > c$ with previously mentioned restrictions will be the same as the solution to
             $$
                 (ax + b)^2 - c^2 > 0.
             $$
@@ -657,7 +657,7 @@
 
     \section{Straight line graphs}
         \begin{definition}[straight line]
-            A \textbf{straight line} is an equation of the form $y = mx + c$, where $m$ is the \textbf{gradient} and $c$ is the \textbf{$y$-interception}.
+            A \textbf{straight line} is an equation of the form $y = m x + c$, where $m$ is the \textbf{gradient} and $c$ is the \textbf{$y$-interception}.
         \end{definition}
 
         \begin{definition}[expression forms]
@@ -822,11 +822,11 @@
         \end{theorem}
 
         \begin{theorem}[trig function manipulations]
-            The function $y = a \sin bx + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
+            The function $y = a \sin b x + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
 
-            The function $y = a \cos bx + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
+            The function $y = a \cos b x + c$ has an amplitude of $a$, a period of $\frac{2\pi}{b}$ and is translated upwards by $c$ units.
 
-            The function $y = a \tan bx + c$ stretches the graph vertically by a factor of $a$, has a period of $\frac{\pi}{b}$ and is translated upwards by $c$ units.
+            The function $y = a \tan b x + c$ stretches the graph vertically by a factor of $a$, has a period of $\frac{\pi}{b}$ and is translated upwards by $c$ units.
         \end{theorem}
 
     \section{Differentiation and integration}
@@ -1047,7 +1047,7 @@
                     \int f(g(x)) \diff x = \frac{1}{g'(x)} \int f(g(x)) \diff g(x)
                 $$
 
-                Using this we can find the composite of previous functions with $ax + b$.
+                Using this we can find the composite of previous functions with $a x + b$.
             \end{theorem}
 
             \begin{definition}[definite integral, Riemann integral]
@@ -1064,7 +1064,7 @@
                 $$
                 where $F(x)$ is an antiderivative of $f(x)$.
                 \begin{proof}
-                    A basic explanation is: when we 'sum' together some small increments (significance of Riemann Integral) which are derivatives of the original function, we in fact just get the increment in the original function itself!
+                    A basic explanation is: when we 'sum' together some small increments (significance of Riemann Integral) which are derivatives of the original function, we just get the increment in the original function itself!
                 \end{proof}
             \end{theorem}
 
@@ -1231,7 +1231,7 @@
                 \frac{n!}{a_1! a_2! \cdots a_k!}.
             $$
             \begin{proof}
-                We now say the objects are different. Then we have $n!$ choices. Each 'different object arrangement' within a certain type is counted as $a_1!, a_2!, \ldots, a_k!$ types so we divide them by this.
+                We now say the objects are different. Then we have $n!$ choices. Each 'different object arrangement' within a certain type is counted as $a_1! , a_2! , \ldots, a_k!$ types so we divide them by this.
             \end{proof}
             \begin{proof}
                 We can think of this as a combinatoric argument. The number of choices will be
@@ -1279,7 +1279,7 @@
         \end{corollary}
 
         \begin{definition}[arithmetic progression/sequence]
-            An \textbf{arithmetic progression/sequence} is when the next term is the previous term plus a certain difference which we call the \textbf{common difference}. In fact, we say the following:
+            An \textbf{arithmetic progression/sequence} is when the next term is the previous term plus a certain difference which we call the \textbf{common difference}. We say the following:
             $$
                 a_n = a_{n - 1} + d.
             $$
@@ -1306,7 +1306,7 @@
         \end{theorem}
 
         \begin{definition}[geometric progression/sequence]
-            A \textbf{geometric progression/sequence} is when the next term is the previous term times a certain ratio which we call the \textbf{common ratio}. In fact, we say the following:
+            A \textbf{geometric progression/sequence} is when the next term is the previous term times a certain ratio which we call the \textbf{common ratio}. We say the following:
             $$
                 g_n = g_{n - 1} \cdot r.
             $$
@@ -1343,7 +1343,7 @@
             
         My deepest thanks to all the Maths teachers I have met and my friends who helped and supported me with producing this.
         
-        I would like to give special thanks to Mr Finch-Noyes, my current Maths teacher, and Dr Zhang, Ms Zhu and Mr Feng, my tutor for providing me with all this knowledge.
+        I would like to give special thanks to Mr Finch-Noyes, my current Maths teacher, and Dr Zhang, Ms Zhu, Mr Xu and Mr Feng, my tutors for providing me with all this knowledge.
 
         Finally, I hope this helped you to gain a better understanding of Maths. Feel free to email \href{eason.syc@icloud.com}{eason.syc@icloud.com} to send me feedback.
 
