@@ -2,6 +2,7 @@
 \usepackage{allan-eason}
 
 \usepackage{siunitx}
+\usepackage{accents}
 
 \usepackage[english]{babel}
 
@@ -1091,7 +1092,93 @@
 
     \section{Vectors in two dimensions}
 
-        
+        \begin{definition}[vector, scalar]
+            A \textbf{vector} is an element of a linear space that a scalar multiplication and addition can be defined on, and a \textbf{scalar} is an element of a field. Just kidding.
+
+            A \textbf{vector} is a quantity that has both magnitude and direction. A \textbf{scalar} is a quantity which only has a magnitude.
+        \end{definition}
+
+        \begin{definition}[notation of vectors]
+            A vector can be represented as a bold letter $\vect{a}$. In handwriting, we denote it as $\underaccent{\tilde}{a}$.
+
+            A vector from point $A$ to point $B$ is denoted as $\ray{AB}$.
+
+            The vector going right $x$ units and going up $y$ units can be denoted as
+            $$
+                \binom{x}{y}
+            $$
+            or
+            $$
+                x\vect{i} + y\vect{j},
+            $$
+            where $\vect{i}$ and $\vect{j}$ is the unit vectors in the $x$ direction and $y$ direction.
+        \end{definition}
+
+        \begin{definition}[modulus]
+            A \textbf{modulus} (I will prefer norm instead) of a vector $\vect{a}$ represented as $x\vect{i} + y\vect{j}$ will be equal to
+            $$
+                \abs{\vect{a}} = \sqrt{x^2 + y^2}.
+            $$
+
+            It is also the \textbf{length} of the vector $\vect{a}$.
+        \end{definition}
+
+        \begin{definition}[unit vector]
+            A \textbf{unit vector} is a vector which has a length of $1$ in a certain direction.
+        \end{definition}
+
+        \begin{definition}[inverse]
+            By the axioms of a linear space, a vector always has another vector which summed together gets the addition unit (0), and we denote the inverse of a vector $\vect{a}$ as $-\vect{a}$ since it exists and is unique. Just kidding.
+
+            We denote $-\vect{a}$ as the vector which has the same length but the opposite direction of $\vect{a}$.
+
+            In particular, if $\vect{a} = x\vect{i} + y\vect{j}$, then $-\vect{a} = -x\vect{i} -y\vect{j}$.
+        \end{definition}
+
+        \begin{definition}[addition]
+            We denote $\vect{a} + \vect{b}$ as the sum of two vectors and $\vect{a} - \vect{b} = \vect{a} + (-\vect{b})$.
+
+            In particular, for $\vect{a} = x_a\vect{i} + y_a\vect{j}$, and for $\vect{b} = x_b \vect{i} + y_b \vect{j}$, we have
+            $$
+                \vect{a} + \vect{b} = (x_a + x_b) \vect{i} + (y_a + y_b) \vect{j},
+            $$
+            and
+            $$
+                \vect{a} - \vect{b} = (x_a - x_b) \vect{i} + (y_a - y_b) \vect{j}.
+            $$
+        \end{definition}
+
+        \begin{definition}[scalar multiplication]
+            We denote $k\vect{a}$ as the product of the scalar $k$ with the vector $\vect{a}$.
+
+            In particular, for $\vect{a} = x \vect{i} + y \vect{j}$, we have
+            $$
+                k\vect{a} = (kx) \vect{i} + (ky) \vect{j}.
+            $$
+        \end{definition}
+
+        \begin{definition}[colinear points]
+            If for points $A, B, C$ we have a scalar $k$ s.t.
+            $$
+                \ray{AB} = k \ray{AC},
+            $$
+            then we say $A, B, C$ are colinear.
+        \end{definition}
+
+        \begin{definition}[position vector]
+            The position vector of vector $P$ is the vector $\ray{OP}$ where $O$ is the origin.
+        \end{definition}
+
+        \begin{theorem}[addition and subtraction rule]
+            We have
+            $$
+                \ray{AB} + \ray{BC} = \ray{AC},
+            $$
+            and
+            $$
+                \ray{AB} = \ray{CB} - \ray{CA}.
+            $$
+        \end{theorem}
 
     \section{Permutations and combinations}
 
