@@ -1,4 +1,4 @@
-# GCSE-AddMaths-Revision-Sheet
+# GCSE AddMaths Revision Sheet
  Knowledge Cheat Sheet for CIE IGCSE Additional Mathematics.
 
  Mathematics is one of my favourite subjects and it is very important whatever you are doing in the future. It is mostly about techniques for solving problems, but the knowledge behind all those techniques is vital for understanding. To aid practice, I produced this document based on the syllabus.
